@@ -79,3 +79,41 @@ $(function(){
     }  
 
 }); 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselImages = document.querySelector('.carousel-images');
+    const images = document.querySelectorAll('.carousel-images img');
+
+    let counter = 0;
+    const totalImages = images.length;
+    let imageWidth = 0;
+
+    function adjustCarouselSize() {
+        const windowWidth = window.innerWidth;
+        imageWidth = windowWidth * 0.8; // Defina a largura da imagem como 80% da largura da janela
+        const carouselWidth = totalImages * imageWidth;
+        carouselImages.style.width = carouselWidth + 'px';
+        images.forEach(image => {
+            image.style.width = imageWidth + 'px';
+        });
+    }
+
+    adjustCarouselSize();
+
+    function moveCarousel() {
+        counter++;
+        if (counter >= totalImages) {
+            counter = 0;
+        }
+        const offset = -counter * imageWidth;
+        carouselImages.style.transform = 'translateX(' + offset + 'px)';
+    }
+
+    setInterval(moveCarousel, 3000);
+
+    window.addEventListener('resize', adjustCarouselSize); // Reajuste o tamanho do carrossel quando a janela for redimensionada
+});
+
+
+
+

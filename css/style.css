@@ -14,7 +14,6 @@
     font-size: 20px; 
     font-family: 'Lato', sans-serif; 
     transition:.3s; 
-    border-radius: 35px;
 }
 
 .btn-chamada:hover { 
@@ -177,6 +176,59 @@
       font-family: 'Lato', sans-serif;
        text-align: center;
 }
+/*Portifolio--> */
+#portfolio {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  #portfolio h2 {
+    margin-bottom: 10px;
+  }
+  
+  #portfolio p {
+    color: #555;
+  }
+  
+  .carousel {
+    width: 70%;
+    /*max-width: 600px; /* Definindo um tamanho máximo para o carrossel */
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden; /* Bloqueia a rolagem horizontal */
+  }
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 40%;
+}
+
+.carousel-images img {
+    flex: 0 0 auto;
+    width: 40%;
+    height: auto;
+    object-fit: contain; /* Alterado para 'contain' para garantir que a imagem caiba completamente */
+    border-radius: 10px;
+}
+
+  
+  
+  
+  
+  .carousel-images img:hover {
+    filter: brightness(80%);
+    border-radius:10px ;
+  }
+  
+
+
+  
+  
+
+  
+  
 
 /*Depoimentos*/
 .section-depoimentos           { 
@@ -233,7 +285,7 @@
     position:relative;
     margin-bottom:0;
     padding:0;
-    zoom:1; 
+    *zoom:1; 
     -ms-touch-action:pan-y; 
     touch-action:pan-y;
  }
@@ -313,9 +365,9 @@ ul.bxslider     {
 .bx-wrapper .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item { 
     display:inline-block;
-    vertical-align:bottom;
-    zoom:1; 
-    display:inline;
+     vertical-align:bottom;
+    *zoom:1; 
+    *display:inline;
 }
 
 .bx-wrapper .bx-pager-item { 
