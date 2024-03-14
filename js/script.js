@@ -90,12 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function adjustCarouselSize() {
         const windowWidth = window.innerWidth;
-        imageWidth = windowWidth * 0.8; // Defina a largura da imagem como 80% da largura da janela
+        imageWidth = windowWidth * 0.5; // Defina a largura da imagem como 80% da largura da janela
         const carouselWidth = totalImages * imageWidth;
         carouselImages.style.width = carouselWidth + 'px';
         images.forEach(image => {
             image.style.width = imageWidth + 'px';
         });
+        carouselImages.style.transition = 'transform 0.8s ease-in-out'
     }
 
     adjustCarouselSize();
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
             counter = 0;
         }
         const offset = -counter * imageWidth;
-        carouselImages.style.transform = 'translateX(' + offset + 'px)';
+        carouselImages.style.transform = 'translateX(' + offset + 'px)'
     }
 
     setInterval(moveCarousel, 3000);
